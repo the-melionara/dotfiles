@@ -1,0 +1,34 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+
+[editor.lsp]
+enable = true
+display-messages = true
+
+[editor.statusline]
+left = ["spacer", "spinner", "mode", "separator", "file-name"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 20
+
+[keys.normal.space]
+"u" = "switch_to_lowercase"
+"U" = "switch_to_uppercase"
+
+[keys.select.space]
+"u" = "switch_to_lowercase"
+"U" = "switch_to_uppercase"

@@ -1,0 +1,20 @@
+[[language]]
+name = "rust"
+auto-format = false
+rulers = [100]
+
+[[language]]
+name = "javascript"
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "java"
+language-servers = ["jdtls"]
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
+rulers = [100]
+
+[language-server.jdtls]
+command="jdtls"
+args=["-data", "/tmp/java_mierdon"]
