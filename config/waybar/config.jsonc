@@ -110,7 +110,7 @@
     },
     "custom/keyboard": {
         "format": " ",
-        "on-click": "~/.config/waybar/toggle_laptop_keyboard.sh",
+        "on-click": "~/dotfiles/config/waybar/toggle_laptop_keyboard.sh",
         "tooltip-format": "Toggle Laptop Keyboard"
     },
     "custom/power": {
