@@ -11,3 +11,4 @@
 - `helix` for cool editor
 - `alacritty` for terminal
 - `tmux` for tmux
+- `yazi` for file manager
