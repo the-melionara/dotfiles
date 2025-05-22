@@ -10,3 +10,4 @@
 - `waybar` for pretty bar
 - `helix` for cool editor
 - `alacritty` for terminal
+- `tmux` for tmux
