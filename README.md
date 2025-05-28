@@ -12,3 +12,4 @@
 - `alacritty` for terminal
 - `tmux` for tmux
 - `yazi` for file manager
+- `cliphist` for clipboard manager
