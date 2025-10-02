@@ -107,10 +107,13 @@ source $ZSH/oh-my-zsh.sh
 path+="/home/mel/.cargo/bin"
 path+="/usr/java/jdk-21.0.4/bin"
 path+="/home/mel/uni/si/jason_bin/bin"
+path+="/usr/bin"
+path+="$WONDERFUL_TOOLCHAIN/toolchain/gcc-arm-none-eabi/bin"
 export PATH
 
 alias hx=helix
 alias nes=mesen
+alias mv=mv -v
 
 remindme --warn
 

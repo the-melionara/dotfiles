@@ -67,8 +67,9 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip-format": "Brightness {percent}%"
     },
     "battery": {
         "interval": 1,
@@ -86,15 +87,16 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) 󰖩",
-        "format-ethernet": "{ipaddr}/{cidr} 󰈁",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP) 󱚵",
-        "format-disconnected": "Disconnected 󰖪",
+        "format-wifi": "󰖩",
+        "format-ethernet": "󰈁",
+        "tooltip-format": "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}\n{ifname} via {gwaddr}",
+        "format-linked": "󱚵",
+        "format-disconnected": "󰖪",
     },
     "pulseaudio": {
         "format": "{volume}% 󰕾",
-        "format-muted": "MUTED 󰝟"
+        "format-muted": "MUTED 󰝟",
+        "tooltip-format": "{desc}"
     },
     "custom/media": {
         "format": "{icon} {text}",

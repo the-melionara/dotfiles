@@ -145,7 +145,7 @@ button:hover {
 }
 
 #battery {
-    padding-right: 12px;
+    padding-right: 14px;
 }
 
 #battery.charging, #battery.plugged {
@@ -181,7 +181,7 @@ label:focus {
 }
 
 #network {
-    padding-right: 12.5;
+    padding-right: 13px;
 }
 
 #network.disconnected {
