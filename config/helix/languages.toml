@@ -3,6 +3,24 @@ name = "rust"
 auto-format = false
 rulers = [100]
 
+[language.debugger]
+command = "codelldb"
+name = "codelldb"
+port-arg = "--port {}"
+transport = "tcp"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+
+[[language.debugger.templates.completion]]
+completion = "filename"
+name = "binary"
+
+[language.debugger.templates.args]
+program = "{0}"
+runInTerminal = false
+
 [[language]]
 name = "javascript"
 auto-format = false
@@ -15,6 +33,29 @@ auto-format = false
 indent = { tab-width = 4, unit = "    " }
 rulers = [100]
 
-[language-server.jdtls]
-command="jdtls"
-args=["-data", "/tmp/java_mierdon"]
+[[language]]
+name = "kotlin"
+language-servers = ["kotlin-language-server"]
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
+rulers = [100]
+
+# [language-server.jdtls]
+# command="jdtls"
+# args=["-data", "/tmp/java_mierdon"]
+
+[[language]]
+name = "c-sharp"
+language-servers = ["omnisharp"]
+auto-format = false
+indent = { tab-width = 4, unit = "    " }
+rulers = [100]
+
+[language-server.omnisharp]
+command = "omnisharp"
+args = ["-lsp"]
+timeout = 10000
+
+[[language]]
+name = "xml"
+indent = { tab-width = 4, unit = "    " }

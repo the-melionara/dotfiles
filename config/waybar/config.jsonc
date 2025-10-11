@@ -7,21 +7,20 @@
     "spacing": 2, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "sway/mode",
-        "sway/scratchpad",
-        "custom/media"
+        "hyprland/window",
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/workspaces"
     ],
     "modules-right": [
+        "hyprland/language",
         "custom/keyboard",
         "pulseaudio",
+        "cpu",
+        "memory",
+        "temperature",
         "network",
         "backlight",
-        "keyboard-state",
-        "sway/language",
         "battery",
         "clock",
         "tray",
@@ -29,17 +28,17 @@
     // Modules configuration
     "hyprland/workspaces": {
         "format": "{icon}",
-        "format-icos": {
-            "1": "󰲠",
-            "2": "󰲢",
-            "3": "󰲤",
-            "4": "󰲦",
-            "5": "󰲨",
-            "6": "󰲪",
-            "7": "󰲬",
-            "8": "󰲮",
-            "9": "󰲰",
-            "10": "󰿬"
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X"
         }
     },
     "keyboard-state": {
@@ -51,8 +50,30 @@
             "unlocked": ""
         }
     },
+    "cpu": {
+        "interval": 1,
+        "format": "",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 1,
+        "format": ""
+    },
+    "temperature": {
+        "format": ""
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "icon": true,
+        "icon-size": 15,
+        "separate-outputs": true
+    },
+    "hyprland/language": {
+        "format-es": "ES ",
+        "on-click": "~/dotfiles/config/waybar/toggle_laptop_keyboard.sh"
+    },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 15,
         "spacing": 10,
         // "icons": {
         //   "blueman": "bluetooth",
@@ -79,7 +100,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
+        "format-full": "",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
@@ -92,11 +113,13 @@
         "tooltip-format": "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}\n{ifname} via {gwaddr}",
         "format-linked": "󱚵",
         "format-disconnected": "󰖪",
+        "on-click": "alacritty -e nmtui"
     },
     "pulseaudio": {
         "format": "{volume}% 󰕾",
         "format-muted": "MUTED 󰝟",
-        "tooltip-format": "{desc}"
+        "tooltip-format": "{desc}",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "custom/media": {
         "format": "{icon} {text}",
@@ -109,11 +132,6 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/keyboard": {
-        "format": " ",
-        "on-click": "~/dotfiles/config/waybar/toggle_laptop_keyboard.sh",
-        "tooltip-format": "Toggle Laptop Keyboard"
     },
     "custom/power": {
         "format" : "⏻ ",
