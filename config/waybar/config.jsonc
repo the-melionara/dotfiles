@@ -1,11 +1,7 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
     "spacing": 2, // Gaps between modules (4px)
-    // Choose the order of the modules
     "modules-left": [
         "hyprland/window",
     ],
@@ -14,7 +10,6 @@
     ],
     "modules-right": [
         "hyprland/language",
-        "custom/keyboard",
         "pulseaudio",
         "cpu",
         "memory",
@@ -39,15 +34,6 @@
             "8": "VIII",
             "9": "IX",
             "10": "X"
-        }
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
         }
     },
     "cpu": {
@@ -75,10 +61,6 @@
     "tray": {
         "icon-size": 15,
         "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
     },
     "clock": {
         "interval": 1,
@@ -87,7 +69,6 @@
         "tooltip-format": "{:%Ec}"
     },
     "backlight": {
-        // "device": "acpi_video1",
         "format": "{icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "tooltip-format": "Brightness {percent}%"
@@ -95,7 +76,6 @@
     "battery": {
         "interval": 1,
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -107,9 +87,8 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "󰖩",
-        "format-ethernet": "󰈁",
+        "format-ethernet": "",
         "tooltip-format": "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}\n{ifname} via {gwaddr}",
         "format-linked": "󱚵",
         "format-disconnected": "󰖪",
@@ -121,28 +100,4 @@
         "tooltip-format": "{desc}",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/power": {
-        "format" : "⏻ ",
-    		"tooltip": false,
-    		"menu": "on-click",
-    		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    		"menu-actions": {
-    			"shutdown": "shutdown",
-    			"reboot": "reboot",
-    			"suspend": "systemctl suspend",
-    			"hibernate": "systemctl hibernate"
-    		}
-    }
 }
