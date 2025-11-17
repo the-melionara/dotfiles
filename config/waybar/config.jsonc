@@ -39,14 +39,17 @@
     "cpu": {
         "interval": 1,
         "format": "",
+        "format-alt": "{usage}% ",
         "max-length": 10
     },
     "memory": {
         "interval": 1,
-        "format": ""
+        "format": "",
+        "format-alt": "{used}G "
     },
     "temperature": {
-        "format": ""
+        "format": "",
+        "format-alt": "{temperatureC}ºC ",
     },
     "hyprland/window": {
         "format": "{title}",
